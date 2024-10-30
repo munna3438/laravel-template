@@ -30,10 +30,10 @@
                         </a>
                         <div class="sidebar_link_contanier">
                             <div class="accordion">
-                                <div class="sidebar_link  dropdown_head">Catagory</div>
-                                <div class="dropdown_inner mb-1">
-                                    <a href="#" class="sidebar_link">New Catagory</a>
-                                    <a href="#" class="sidebar_link">Catagory List</a>
+                                <div class="sidebar_link  dropdown_head {{request()->is('dashboard/category*') ? 'active' : '' }}">category</div>
+                                <div class="dropdown_inner mb-1 " style="{{request()->is('dashboard/category*') ? 'display:block':'none'}}">
+                                    <a href="{{route('admin.add.category')}}" class="sidebar_link ">New category</a>
+                                    <a href="#" class="sidebar_link">category List</a>
                                 </div>
                             </div>
                         </div>
@@ -48,14 +48,14 @@
                         </div>
                     </div>
                     <div class="sidebar_setings">
-                        <div class="accordion">
-                            <div class="sidebar_link  dropdown_head">Catagory</div>
+                        {{-- <div class="accordion">
+                            <div class="sidebar_link  dropdown_head">category</div>
                             <div class="dropdown_inner mb-1">
-                                <a href="#" class="sidebar_link">New Catagory</a>
-                                <a href="#" class="sidebar_link">Catagory List</a>
+                                <a href="#" class="sidebar_link">New category</a>
+                                <a href="#" class="sidebar_link">category List</a>
                             </div>
-                        </div>
-                        {{-- <div class="sidebar_link ">Setting</div> --}}
+                        </div> --}}
+                        <div class="sidebar_link ">Setting</div>
                     </div>
                 </div>
             </div>

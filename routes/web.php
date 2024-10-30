@@ -12,6 +12,9 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', [homeController::class, 'index'])->name('dashboard');
-
+    Route::prefix('dashboard')->middleware(['auth:sanctum', 'verified'])->group(function () {
+        Route::get('/', [homeController::class, 'index'])->name('dashboard');
+        Route::get('/category/list', [homeController::class, 'category'])->name('admin.add.category');
+        Route::get('/category/add', [homeController::class, 'category'])->name('admin.list.category');
+    });
 });
